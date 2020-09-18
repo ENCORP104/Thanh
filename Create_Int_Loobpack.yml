@@ -1,15 +1,14 @@
 ---
-- name: set ip loobpack
+- name: set ip loopback
   hosts: all
   gather_facts: no
 
   tasks:
-    - name: set ip loobpack
+    - name: set ip loopback0
       ios_l3_interface:
-        name:  lob0
+        name:  loopback 0
 	ipv4:  7.7.7.7/32
-        state: present
-
+	
     - name: Show interface
       ios_command:
         commands:
