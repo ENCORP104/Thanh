@@ -6,13 +6,13 @@
   tasks:
     - name: set ip loobpack
       ios_l3_interface:
-        name: "{{ item.name }}"
+        name: loobpack {{ item.name }}
 	ipv4: "{{ item.ip }}"
         state: present
       with_items:
-        - { name: "loobpack 1", ip: 10.0.1.1/24}
-	- { name: "loobpack 2", ip: 10.0.2.1/24}
-	- { name: "loobpack 3", ip: 10.0.3.1/24}
+        - { name: "1", ip: 10.0.1.1/24}
+	- { name: "2", ip: 10.0.2.1/24}
+	- { name: "3", ip: 10.0.3.1/24}
 
     - name: Show interface
       ios_command:
